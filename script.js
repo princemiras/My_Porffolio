@@ -2,7 +2,7 @@
 const CONFIG = {
   name: "Prince Miras",
   email: "mirasprince123@gmail.com",
-  resumeFile: "assets/Prince_Miras_Resume.pdf", // your resume PDF inside the assets folder
+  resumeFile: "Prince_Miras_Resume.pdf", // your resume PDF inside the assets folder
   availability: "Part-time Administrative Virtual Assistant, Philippines time (PHT)",
   roles: ["administrative VA.", "data entry helper.", "detail-minded IS student."]
 };
@@ -15,17 +15,17 @@ const SKILLS = {
 };
 const PROJECTS = [
   { title: "R.A. Motor Parts Sales & Inventory System", cat: "Business",
-    imgs: ["assets/motor-1.png", "assets/motor-2.png", "assets/motor-3.png", "assets/motor-4.png"],
+    imgs: ["motor-1.png", "motor-2.png", "motor-3.png", "motor-4.png"],
     desc: "A point-of-sale and inventory system for a motor parts store, made for my capstone research project.",
     features: ["Dashboard with sales totals, monthly revenue and low-stock alerts", "Product list with brand, model and part number search", "Inventory status: in stock, low stock, out of stock", "Stock in, stock history, stock check, reports, profit and void approvals"],
     tech: ["POS", "Inventory", "Reports", "Dashboard"] },
   { title: "Harry Rice Mill Management System", cat: "Business",
-    imgs: ["assets/ricemill-1.png", "assets/ricemill-2.png", "assets/ricemill-3.png", "assets/ricemill-4.png", "assets/ricemill-5.png"],
+    imgs: ["ricemill-1.png", "ricemill-2.png", "ricemill-3.png", "ricemill-4.png", "ricemill-5.png"],
     desc: "A system for a rice mill to handle customers, palay receiving, drying and daily collections.",
     features: ["Palay receiving with transaction numbers and status tracking", "Today's Bulad (drying) with expected drying fees", "Dashboard cards for the palay pipeline and today's revenue", "Sack inventory, unpaid transactions, reports and audit logs"],
     tech: ["Records", "Dashboard", "Workflow", "Audit logs"] },
   { title: "BRMPCAS: Banca Records & Permit Compliance System", cat: "Government",
-    imgs: ["assets/banca-1.png", "assets/banca-2.png", "assets/banca-3.png"],
+    imgs: ["banca-1.png", "banca-2.png", "banca-3.png"],
     desc: "A web system for a Municipal Agriculture Office to register fishing boats (bancas), issue permits and monitor compliance.",
     features: ["Banca records and boat owner registry with search and filters", "Registration applications and permit management", "Inspection and compliance tracking with analytics", "Dashboard of key metrics, reports and notifications"],
     tech: ["React.js", "Records", "Permits", "Analytics"] }
