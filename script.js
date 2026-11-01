@@ -91,14 +91,14 @@ const SERVICES = [
 $("#serviceGrid").innerHTML = SERVICES.map(([t, d]) => `<article class="card"><h3>${t}</h3><p>${d}</p></article>`).join("");
 
 // Sample work
-const HEAD = ["Name", "Date", "Phone", "City"];
-const MESSY = [["juan dela cruz", "March 5, 2026", "09171234567", "Manila"], ["MARIA SANTOS", "7 Mar 2026", "0917-555-9876", "manila "], ["juan dela cruz", "March 5, 2026", "09171234567", "Manila"], ["Pedro  Reyes", "2026/03/08", "(0918) 555 4321", "CEBU"], ["ana lim", "8-3-2026", "09191112222", ""]];
-const CLEAN = [["Juan Dela Cruz", "2026-03-05", "0917-123-4567", "Manila"], ["Maria Santos", "2026-03-07", "0917-555-9876", "Manila"], ["Pedro Reyes", "2026-03-08", "0918-555-4321", "Cebu"], ["Ana Lim", "2026-03-08", "0919-111-2222", ""]];
+const HEAD = ["Name", "Date", "Email", "City"];
+const MESSY = [["juan dela cruz", "March 5, 2026", "Juan.DelaCruz@Example.com", "Manila"], ["MARIA SANTOS", "7 Mar 2026", "maria.santos@example.com ", "manila "], ["juan dela cruz", "March 5, 2026", "Juan.DelaCruz@Example.com", "Manila"], ["Pedro  Reyes", "2026/03/08", "PEDRO.REYES@EXAMPLE.COM", "CEBU"], ["ana lim", "8-3-2026", "ana.lim@example", ""]];
+const CLEAN = [["Juan Dela Cruz", "2026-03-05", "juan.delacruz@example.com", "Manila"], ["Maria Santos", "2026-03-07", "maria.santos@example.com", "Manila"], ["Pedro Reyes", "2026-03-08", "pedro.reyes@example.com", "Cebu"], ["Ana Lim", "2026-03-08", "ana.lim@example <em>(incomplete: ask client)</em>", ""]];
 const table = rows => `<div class="tblwrap"><table class="tbl"><thead><tr>${HEAD.map(x => `<th>${x}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c || "<em>(missing)</em>"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 let cleaned = false;
 function drawSheet() {
   $("#sheet").innerHTML = table(cleaned ? CLEAN : MESSY);
-  $("#sheetNote").textContent = cleaned ? "Done: 1 duplicate removed, names and phone numbers formatted, dates made consistent, 1 missing city flagged for follow-up." : "Before: mixed capitalization, different date and phone formats, a duplicate row and an empty city.";
+  $("#sheetNote").textContent = cleaned ? "Done: 1 duplicate removed, names and emails formatted, dates made consistent, 1 incomplete email and 1 missing city flagged for follow-up." : "Before: mixed capitalization, different date formats, extra spaces, a duplicate row, an incomplete email and an empty city.";
   $("#sheetBtn").textContent = cleaned ? "Show original" : "Clean it up";
 }
 $("#sheetBtn").onclick = () => { cleaned = !cleaned; drawSheet(); };
