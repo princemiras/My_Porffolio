@@ -13,7 +13,7 @@
 <header class="nav" id="top">
   <a class="logo" href="#top" id="logoName">Your Name</a>
   <nav id="menu" aria-label="Main">
-    <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#samples">Samples</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
   </nav>
   <div class="nav-actions">
     <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">◐</button>
@@ -56,6 +56,12 @@
   </div>
 </section>
 
+<section id="services" class="sec alt">
+  <h2>What I can do for you</h2>
+  <p class="muted">Tasks I can take off your plate, all done carefully and double-checked.</p>
+  <div class="grid" id="serviceGrid"></div>
+</section>
+
 <section id="experience" class="sec">
   <h2>Experience</h2>
   <article class="card">
@@ -77,11 +83,50 @@
   <ul class="skills" id="skillList"></ul>
 </section>
 
-<section id="projects" class="sec">
+<section id="samples" class="sec">
+  <h2>Sample work</h2>
+  <p class="muted">Practice samples made with dummy data (not real client information). They show how I work.</p>
+  <div class="tabs" id="sampleTabs"></div>
+  <div class="spanel">
+    <p>Messy contact list, cleaned up: names, dates and phone numbers standardized, duplicates removed, gaps flagged.</p>
+    <div id="sheet"></div>
+    <p class="note" id="sheetNote"></p>
+    <button class="btn primary" id="sheetBtn">Clean it up</button>
+  </div>
+  <div class="spanel" hidden>
+    <p>A customer asks about a delayed order. This is how I would reply.</p>
+    <div class="mail"><b>From customer:</b> "Hi, I ordered last week (Order #1042) but I still have no tracking number. Can you help?"</div>
+    <div class="mail reply"><b>My reply:</b><br>Hi! Thank you for reaching out, and sorry for the wait. I checked Order #1042 and I'm confirming the tracking details with our team now. I'll send them to you by the end of today. If anything changes, I'll let you know right away.<br>Kind regards,<br>Prince</div>
+    <p class="note">Polite, confirms the order number, and gives a clear next step and time.</p>
+  </div>
+  <div class="spanel" hidden>
+    <p>A sample day for a part-time admin VA.</p>
+    <div class="tblwrap"><table class="tbl"><thead><tr><th>Time</th><th>Task</th></tr></thead><tbody>
+      <tr><td>8:00</td><td>Check and sort the inbox, flag urgent items</td></tr>
+      <tr><td>8:30</td><td>Reply to routine messages, update the calendar</td></tr>
+      <tr><td>9:30</td><td>Data entry batch and update the client tracker</td></tr>
+      <tr><td>11:00</td><td>Organize and rename files in shared folders</td></tr>
+      <tr><td>1:00</td><td>Prepare documents and slides (Word, PowerPoint)</td></tr>
+      <tr><td>4:00</td><td>Send an end-of-day summary of what was finished</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<section id="projects" class="sec alt">
   <h2>Projects</h2>
   <p class="muted">Real systems I designed and coded. Open one to see what it does.</p>
   <div class="tabs" id="filters"></div>
   <div class="grid" id="projectGrid"></div>
+</section>
+
+<section id="availability" class="sec">
+  <h2>How I work</h2>
+  <div class="grid">
+    <article class="card"><h3>Availability</h3><p>Part-time. Hours and schedule can be agreed with you. Based in the Philippines (PHT, UTC+8).</p></article>
+    <article class="card"><h3>Communication</h3><p>I reply within a day and send a short summary of finished tasks, so you always know the status.</p></article>
+    <article class="card"><h3>Instructions</h3><p>I follow written steps and SOPs exactly. If something is unclear, I ask instead of guessing.</p></article>
+    <article class="card"><h3>Trust</h3><p>I keep records confidential and I'm happy to start with a short paid trial task.</p></article>
+  </div>
 </section>
 
 <section id="contact" class="sec alt">

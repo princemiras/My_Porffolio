@@ -79,6 +79,35 @@ const flip = li => { li.classList.toggle("done"); li.setAttribute("aria-checked"
 list.onclick = e => e.target.closest("li") && flip(e.target.closest("li"));
 list.onkeydown = e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); e.target.closest("li") && flip(e.target); } };
 
+// Services
+const SERVICES = [
+  ["Data Entry and Encoding", "Accurate typing and encoding into spreadsheets and systems, checked twice."],
+  ["File and Digital Organization", "Folders, naming and archiving so documents are easy to find."],
+  ["Spreadsheet Updates and Logs", "Keeping trackers, digital logs and records up to date."],
+  ["Email and Calendar Support", "Sorting the inbox, drafting replies and scheduling in Google Workspace."],
+  ["Documents and Slides", "Typing, formatting and preparing files in Word, Excel and PowerPoint."],
+  ["PC and Software Setup", "Installing software, setting up printers and basic troubleshooting."]
+];
+$("#serviceGrid").innerHTML = SERVICES.map(([t, d]) => `<article class="card"><h3>${t}</h3><p>${d}</p></article>`).join("");
+
+// Sample work
+const HEAD = ["Name", "Date", "Phone", "City"];
+const MESSY = [["juan dela cruz", "March 5, 2026", "09171234567", "Manila"], ["MARIA SANTOS", "7 Mar 2026", "0917-555-9876", "manila "], ["juan dela cruz", "March 5, 2026", "09171234567", "Manila"], ["Pedro  Reyes", "2026/03/08", "(0918) 555 4321", "CEBU"], ["ana lim", "8-3-2026", "09191112222", ""]];
+const CLEAN = [["Juan Dela Cruz", "2026-03-05", "0917-123-4567", "Manila"], ["Maria Santos", "2026-03-07", "0917-555-9876", "Manila"], ["Pedro Reyes", "2026-03-08", "0918-555-4321", "Cebu"], ["Ana Lim", "2026-03-08", "0919-111-2222", ""]];
+const table = rows => `<div class="tblwrap"><table class="tbl"><thead><tr>${HEAD.map(x => `<th>${x}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c || "<em>(missing)</em>"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+let cleaned = false;
+function drawSheet() {
+  $("#sheet").innerHTML = table(cleaned ? CLEAN : MESSY);
+  $("#sheetNote").textContent = cleaned ? "Done: 1 duplicate removed, names and phone numbers formatted, dates made consistent, 1 missing city flagged for follow-up." : "Before: mixed capitalization, different date and phone formats, a duplicate row and an empty city.";
+  $("#sheetBtn").textContent = cleaned ? "Show original" : "Clean it up";
+}
+$("#sheetBtn").onclick = () => { cleaned = !cleaned; drawSheet(); };
+drawSheet();
+const stabs = $("#sampleTabs"), panels = document.querySelectorAll(".spanel");
+function showSample(i) { stabs.querySelectorAll("button").forEach((b, j) => b.classList.toggle("on", j === i)); panels.forEach((p, j) => p.hidden = j !== i); }
+["Spreadsheet clean-up", "Email reply", "Daily schedule"].forEach((n, i) => { const b = document.createElement("button"); b.textContent = n; b.onclick = () => showSample(i); stabs.append(b); });
+showSample(0);
+
 // Skills tabs
 const tabs = $("#skillTabs"), sl = $("#skillList");
 function showSkills(cat) {
