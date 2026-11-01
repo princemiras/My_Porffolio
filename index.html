@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio | Virtual Assistant</title>
+<title>Prince Miras | Administrative Virtual Assistant</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EPM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prince Miras | Administrative Virtual Assistant">
+<meta property="og:description" content="Entry-level virtual assistant and Information Systems student. Data entry, file organization, projects and sample work.">
+<meta property="og:url" content="https://princemiras.github.io/My_Porffolio/">
+<meta property="og:image" content="https://princemiras.github.io/My_Porffolio/prince.jpg">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="Prince T. Miras: entry-level virtual assistant and Information Systems student. Projects, skills and contact.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -76,6 +83,15 @@
   </article>
 </section>
 
+<section id="education" class="sec">
+  <h2>Education</h2>
+  <div class="grid">
+    <article class="card"><h3>Bachelor of Science in Information Systems</h3><p class="muted small">Jose Rizal Memorial State University, Katipunan Campus</p><p>2022 to present. 4th-year student, expected graduation June 2027.</p></article>
+    <article class="card"><h3>Secondary education</h3><p class="muted small">Punta National High School</p><p>2016 to 2022</p></article>
+    <article class="card"><h3>Primary education</h3><p class="muted small">Punta Central School</p><p>2010 to 2016</p></article>
+  </div>
+</section>
+
 <section id="skills" class="sec alt">
   <h2>Skills I can offer</h2>
   <p class="muted">Self-rated honestly. I'm still a student, but I learn quickly and can do each of these.</p>
@@ -144,6 +160,26 @@
   </div>
 </section>
 
+<section id="process" class="sec">
+  <h2>How we can start</h2>
+  <div class="grid">
+    <article class="card"><span class="num">1</span><h3>Send me a message</h3><p>Tell me the tasks you need help with and the schedule you prefer.</p></article>
+    <article class="card"><span class="num">2</span><h3>Short paid trial task</h3><p>A small task so you can check my accuracy and how I follow instructions.</p></article>
+    <article class="card"><span class="num">3</span><h3>Ongoing work</h3><p>Regular work with clear updates and a short summary of what I finished.</p></article>
+  </div>
+</section>
+
+<section id="faq" class="sec">
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary>Do you have VA experience?</summary><p>Not with VA clients yet. I do have hands-on admin and data work as an MIS intern (data encoding, file records, workstation and printer setup), and I build business systems. I'm happy to start with a paid trial task.</p></details>
+    <details><summary>What is your availability?</summary><p>Part-time, with a schedule we agree on. I'm based in the Philippines (PHT, UTC+8).</p></details>
+    <details><summary>Can you follow our SOPs and be trained?</summary><p>Yes. I follow written steps exactly, and I ask when something is unclear instead of guessing.</p></details>
+    <details><summary>Which tools do you use?</summary><p>Google Workspace (Docs, Sheets, Drive), Microsoft Word, Excel and PowerPoint. I learn new tools quickly.</p></details>
+    <details><summary>How do you handle private client information?</summary><p>I keep records confidential, use only the access I'm given, and never share client information.</p></details>
+  </div>
+</section>
+
 <section id="contact" class="sec alt">
   <h2>Let's work together</h2>
   <div class="contact">
@@ -151,6 +187,7 @@
       <p>Send me a message and it goes straight to my email. I'll reply as soon as I can, and I'm happy to take a short paid trial task.</p>
       <p><b>Email:</b> <span id="emailText"></span> <button class="chip" id="copyBtn">Copy</button></p>
       <p class="muted small">Availability: <span id="avail"></span></p>
+      <p id="links"></p>
     </div>
     <form id="form" novalidate>
       <label>Your name<input id="fName" required autocomplete="name"></label>

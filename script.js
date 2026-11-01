@@ -3,6 +3,7 @@ const CONFIG = {
   name: "Prince Miras",
   email: "mirasprince123@gmail.com",
   resumeFile: "Prince_Miras_Resume.pdf", // your resume PDF inside the assets folder
+  links: [["OnlineJobs.ph profile", "https://www.onlinejobs.ph/jobseekers/info/5503111"]], // add LinkedIn here later
   availability: "Part-time Administrative Virtual Assistant, Philippines time (PHT)",
   roles: ["administrative VA.", "data entry helper.", "detail-minded IS student."]
 };
@@ -191,6 +192,9 @@ const closeModal = () => { stopSlider(); modal.classList.remove("open"); modal.s
 $("#mClose").onclick = closeModal;
 modal.onclick = e => e.target === modal && closeModal();
 document.addEventListener("keydown", e => e.key === "Escape" && modal.classList.contains("open") && closeModal());
+
+// Profile links
+$("#links").innerHTML = CONFIG.links.map(([n, u]) => `<a class="btn" href="${u}" target="_blank" rel="noopener">${n}</a>`).join(" ");
 
 // Copy email
 $("#copyBtn").onclick = async () => {
