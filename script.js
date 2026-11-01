@@ -31,6 +31,12 @@ const PROJECTS = [
     tech: ["React.js", "Records", "Permits", "Analytics"] }
 ];
 
+/* Typing, setup, testimonials and certificates. Only what you fill in is shown; empty lists stay hidden. */
+const TYPING = { wpm: "50", accuracy: "", image: "typing-test.png" }; // add accuracy like "95%" after a new test; upload typing-test.png
+const SETUP = [];        // example: ["Internet", "Fiber, 50 Mbps"], ["Computer", "Laptop, Windows 11"]
+const TESTIMONIALS = []; // example: { quote: "Accurate and responsible.", name: "Full Name", role: "Position, Office" }
+const CERTS = [];        // example: { title: "Google Workspace Basics", issuer: "Provider", year: "2026", image: "cert-1.png" }
+
 /* ===== SCRIPT ===== */
 const $ = s => document.querySelector(s);
 const toast = msg => { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
@@ -89,6 +95,18 @@ const SERVICES = [
   ["PC and Software Setup", "Installing software, setting up printers and basic troubleshooting."]
 ];
 $("#serviceGrid").innerHTML = SERVICES.map(([t, d]) => `<article class="card"><h3>${t}</h3><p>${d}</p></article>`).join("");
+
+// Typing speed, setup, testimonials, certificates
+(() => {
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const shot = (src, alt) => `<a href="${src}" target="_blank" rel="noopener"><img class="shot" src="${src}" alt="${esc(alt)}" loading="lazy" onerror="this.parentNode.remove()"></a>`;
+  let html = `<article class="card"><div class="big">~${esc(TYPING.wpm)}<small> WPM</small></div><p>Typing speed${TYPING.accuracy ? ", " + esc(TYPING.accuracy) + " accuracy" : ""} (self-tested online).</p>${TYPING.image ? shot(TYPING.image, "Typing test result") : ""}</article>`;
+  if (SETUP.length) html += `<article class="card"><h3>My work setup</h3><ul>${SETUP.map(([k, v]) => `<li><b>${esc(k)}:</b> ${esc(v)}</li>`).join("")}</ul></article>`;
+  $("#proofGrid").innerHTML = html;
+  if (SETUP.length) $("#proofTitle").textContent = "Typing speed and work setup";
+  if (TESTIMONIALS.length) $("#recGrid").innerHTML = TESTIMONIALS.map(t => `<figure class="card quote"><blockquote>\u201C${esc(t.quote)}\u201D</blockquote><figcaption><b>${esc(t.name)}</b><br><span class="muted">${esc(t.role)}</span></figcaption></figure>`).join(""); else $("#recs").remove();
+  if (CERTS.length) $("#certGrid").innerHTML = CERTS.map(c => `<article class="card">${c.image ? shot(c.image, c.title + " certificate") : ""}<h3>${esc(c.title)}</h3><p>${esc(c.issuer)}${c.year ? ", " + esc(c.year) : ""}</p></article>`).join(""); else $("#certs").remove();
+})();
 
 // Sample work
 const HEAD = ["Name", "Date", "Email", "City"];

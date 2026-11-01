@@ -123,3 +123,9 @@ button:disabled{opacity:.6;cursor:wait}
 .mail{background:var(--bg);border-left:4px solid var(--grain);padding:.9rem 1.1rem;border-radius:8px;max-width:70ch}
 .mail.reply{border-left-color:var(--accent)}
 nav{gap:1.2rem}
+main>section.sec:nth-of-type(n){background:transparent}
+main>section.sec:nth-of-type(odd){background:var(--alt)}
+.big{font:800 3.4rem/1 "Bricolage Grotesque",sans-serif;color:var(--accent)}
+.big small{font-size:1.1rem;color:var(--muted);font-weight:500}
+.shot{display:block;width:100%;border-radius:10px;border:1px solid var(--line)}
+.quote{margin:0}.quote blockquote{margin:0;font-size:1.1rem}
